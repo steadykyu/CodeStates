@@ -1,0 +1,34 @@
+main {
+    display: flex;
+    border: 1px dotted red;
+    flex-direction : row;
+    flex-wrap : nowrap;
+  }
+  
+  div {
+    border: 1px solid green;
+  }
+  
+  * {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  #box1{
+    flex-grow: 1;
+    /* flex-basis : 0px */
+    flex-basis : auto
+  }
+
+  #box2{
+    flex-grow: 1;
+    /* flex-basis : 0px */
+    flex-basis : auto
+  }
+
+  #box3{
+    flex-grow: 1;
+    /* flex-basis : 0px */
+    flex-basis : auto
+    
+  }
