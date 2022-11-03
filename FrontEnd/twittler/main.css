@@ -1,0 +1,70 @@
+#greeting {
+    font-size: 2em;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 1em;
+    color: white;
+    background-color: white;
+    text-shadow: 0 0 5px #333;
+    text-align: center;
+    margin: 0.5em;
+    padding: 0.5em;
+  }
+  
+  #inputbox {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: skyblue;
+    color: white;
+  }
+  
+  #tweetButton {
+    flex-basis: 10px;
+  }
+  
+  #tweetlist {
+    margin-bottom: 10px;
+  }
+  
+  #listbox-up {
+    margin-top: 15px;
+    background-color: blue;
+    padding: 15px;
+  }
+  
+  #randomButton {
+    width: 10rem;
+    height: 3rem;
+  }
+  
+  #tweetWrapper {
+    margin: 0px;
+    background-color: lightgray;
+  }
+  
+  .white {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tweetusername {
+    margin-top: 30px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .tweet__createdAt {
+    position: absolute;
+    right: 10px;
+  }
+  
+  .tweet__message {
+    margin-bottom: 5px;
+  }
+  
+  ul > li {
+    border-bottom: 1px solid;
+  }

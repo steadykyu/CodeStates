@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>twittler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
+  <body>
+    <!-- 여기에 HTML 구조를 작성하세요. 아래 코드는 예제이며, 얼마든지 바꿀 수 있습니다 -->
+    <div id="greeting">twittler</div>
+
+    <div id="inputbox">
+      <span>
+        <div id="username">username</div>
+        <input id="usernameInput" type="text" style="font-size: 15pt;" />
+        <div id="message">Message</div>
+        <input id="messageInput" type="text" style="font-size: 30pt;" />
+      </span>
+      <span><button id="tweetButton">Tweet!</button></span>
+    </div>
+
+    <!-- @@@@@@@@@@@@ check new tweets button @@@@@@@@@@@@ -->
+    <div id="listbox-up">
+      <button id="randomButton">
+        <img
+          src="https://img.icons8.com/ios-glyphs/30/000000/refresh--v1.png"
+          style="height: 15px;"
+        />
+        check new tweets
+      </button>
+    </div>
+
+    <!-- @@@@@@@@@@@@ tweetlist @@@@@@@@@@@@ -->
+    <section id="tweetlist" class="white">
+      <script src="script.js"></script>
+    </section>
+  </body>
+</html>
