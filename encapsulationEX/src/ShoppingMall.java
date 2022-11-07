@@ -5,9 +5,16 @@ public class ShoppingMall {
         seller.setGalaxyPrice(1000000);
         // 판매자는 백만원에 아이폰 가격을 설정했다.
 
-        double IphoneSellPrice = seller.getIphonePrice() * 0.2;
-        double GalaxySellingPrice = seller.getGalaxyPrice() * 0.4;
+        double IphoneSellPrice = eventIphonePrice(seller);
+        double GalaxySellingPrice = seller.getGalaxyPrice() * 0.8;
 
+        Customer moneyCustomer = new Customer("현금");
+        Customer cardCustomer = new Customer("카드");
+        Customer pointCustomer = new Customer("포인트");
+
+    }
+    public double eventIphonePrice(Seller seller){
+        return seller.getIphonePrice() * 0.9 * 0.05;
     }
 }
 
