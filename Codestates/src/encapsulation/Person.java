@@ -33,10 +33,12 @@ class Person {
     }
 
     public void drive() {
+        // 캡슐화 되지 않은 코드(자동차의 시동on - 출발 - 시동off 로직이 존재함)
         car.on();
         car.go();
         car.off();
 
+        // 캡슐화 된 코드 :  메서드 구현 내부를 알수 없음.
 //        car.operate();
     }
 }
