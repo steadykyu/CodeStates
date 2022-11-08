@@ -6,15 +6,15 @@ class Seller {
       this.iphonePrice = iphonePrice;
    }
 
-   public int getGalaxyPrice() {
-      return galaxyPrice;
+   public double getGalaxyPrice() {
+      return galaxyPrice * 0.8;
    }
 
    public void setGalaxyPrice(int galaxyPrice) {
       this.galaxyPrice = galaxyPrice;
    }
 
-   public int getIphonePrice() {
-      return iphonePrice;
+   public double getIphonePrice() {
+      return iphonePrice * 0.9;
    }
 }
