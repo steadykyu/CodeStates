@@ -1,3 +1,3 @@
 git add -A
-git commit -m "행정폴더생성"
+git commit -m "Java기초문제까지 해결"
 git push
