@@ -1,10 +1,10 @@
 package app;
 
-public class Phone{
+public class PhoneInfo {
     private int price;
     private String kind;
 
-    public Phone(int price, String kind) {
+    public PhoneInfo(int price, String kind) {
         this.price = price;
         this.kind = kind;
     }

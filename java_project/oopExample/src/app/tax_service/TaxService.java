@@ -3,7 +3,7 @@ package app.tax_service;
 import app.MartService.customer.Customer;
 import app.MartService.customer.Employee;
 import app.MartService.customer.Student;
-import app.Phone;
+import app.PhoneInfo;
 
 import java.util.ArrayList;
 
@@ -21,12 +21,12 @@ public class TaxService {
                 new Employee(3, "이직원", "코리아마트")
         };
 
-        Phone phone = new Phone(1000000, "Iphone");
+        PhoneInfo phoneInfo = new PhoneInfo(1000000, "Iphone");
 
         for(Customer customer : customers){
-            if(customer instanceof Student)  taxList.add(phone.getPrice() * 90 / 100);
-            else if(customer instanceof Employee) taxList.add(phone.getPrice() * 80 / 100);
-            else taxList.add(phone.getPrice());
+            if(customer instanceof Student)  taxList.add(phoneInfo.getPrice() * 90 / 100);
+            else if(customer instanceof Employee) taxList.add(phoneInfo.getPrice() * 80 / 100);
+            else taxList.add(phoneInfo.getPrice());
         }
 
         System.out.println(taxList);
