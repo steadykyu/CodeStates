@@ -1,14 +1,14 @@
 package app;
 
-import app.MartService.MartService;
+import app.MartService.MartApp;
 import app.tax_service.TaxService;
 
 public class Main {
     public static void main(String[] args) {
-        MartService martApp = new MartService();
+        MartApp martApp = new MartApp();
         TaxService taxService = new TaxService();
 
-        martApp.service();
+        martApp.start();
         taxService.taxService();
     }
 }

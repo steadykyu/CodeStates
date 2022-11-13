@@ -1,37 +1,54 @@
 package app.MartService;
 
 import app.MartService.customer.Customer;
-import app.MartService.customer.CustomerRepository;
 import app.MartService.customer.Employee;
 import app.MartService.customer.Student;
+import app.MartService.discount.*;
 import app.PhoneInfo;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 public class MartService {
+    private Customer[] customers;
+    private PhoneInfo phoneInfo;
 
+    int price = phoneInfo.getPrice();
+    DiscountCondition discountCondition;
+
+    public MartService(Customer[] customers, PhoneInfo phoneInfo, int price, DiscountCondition discountCondition) {
+        this.customers = customers;
+        this.phoneInfo = phoneInfo;
+        this.discountCondition = discountCondition;
+    }
+
+    HashMap<Customer, Integer> discountedHashMap = new HashMap<>();
+
+    // 주요 로직 : 고객마다의 할인 요금을 구해서 출력해주자!!
     public void service(){
-        // 고객정보
-        CustomerRepository customerRepository = new CustomerRepository();
-        Customer[] customers = customerRepository.findAll();
+        // 각 고객마다 할인을 적용해본다.
+        DiscountAllCustomers();
 
-        // 핸드폰 가격은 백만원이다.
-        PhoneInfo phoneInfo = new PhoneInfo(1000000,"Iphone");
+        // 고객마다의 할인 요금 출력하기
+        printDiscountedPrice();
+    }
 
-        // 각 고객마다 할인받을시, 얼마에 아이폰을 살수 있을까?
+    private void DiscountAllCustomers() {
         for(Customer customer : customers){
-            if(customer instanceof Student)  customer.setDiscountedPrice(phoneInfo.getPrice() * 90 / 100);
-            else if(customer instanceof Employee) customer.setDiscountedPrice(phoneInfo.getPrice() * 80 / 100);
-            else customer.setDiscountedPrice(phoneInfo.getPrice());
-        }
-
-        //마트에서 50000원 할인 쿠폰을 준다고 하자.
-
-
-
-        // 고객정보 및 할인 받는 가격 출력
-        for(Customer customer : customers){
-            System.out.println(customer);
+            if(customer instanceof Student) discountedHashMap.put(customer, discountCondition.applyDiscountPolicy(price));
+            else if(customer instanceof Employee) discountedHashMap.put(customer, discountCondition.applyDiscountPolicy(price));
+            else discountedHashMap.put(customer, price);
         }
     }
 
+    private void printDiscountedPrice() {
+        System.out.println("할인 요금을 출력합니다.");
+        Set<Customer> keySet = discountedHashMap.keySet();
+        Iterator<Customer> iter = keySet.iterator();
+        while(iter.hasNext()){
+            Customer customer = iter.next();
+            System.out.printf("고객이름 : %s , 할인된요금 : %d\n", customer.getName(), discountedHashMap.get(customer));
+        }
+    }
 }

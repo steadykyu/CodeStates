@@ -1,18 +1,15 @@
 package app.MartService.customer;
 
+import app.PhoneInfo;
+
 public class Customer {
     private int id;
     private String name;
-
-    private int discountedPrice;
+    // 핸드폰 가격은 백만원이다.
 
     public Customer(int id, String name) {
         this.id = id;
         this.name = name;
-    }
-
-    public void setDiscountedPrice(int discountedPrice) {
-        this.discountedPrice = discountedPrice;
     }
 
     public int getId() {
@@ -31,12 +28,4 @@ public class Customer {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", discountedPrice='" + discountedPrice + '\'' +
-                '}';
-    }
 }
