@@ -4,7 +4,6 @@ import app.MartService.customer.Customer;
 import app.MartService.customer.Employee;
 import app.MartService.customer.Student;
 import app.MartService.discount.*;
-import app.PhoneInfo;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -12,15 +11,14 @@ import java.util.Set;
 
 public class MartService {
     private Customer[] customers;
-    private PhoneInfo phoneInfo;
+    int originalprice;
+    // 이걸 배열대신에 Map형식으로 하면, 이름값으로 원하는 할인조건을 적용할수 있을듯하다.
+    DiscountCondition[] discountConditions;
 
-    int price = phoneInfo.getPrice();
-    DiscountCondition discountCondition;
-
-    public MartService(Customer[] customers, PhoneInfo phoneInfo, int price, DiscountCondition discountCondition) {
+    public MartService(Customer[] customers, int originalprice, DiscountCondition[] discountConditions) {
         this.customers = customers;
-        this.phoneInfo = phoneInfo;
-        this.discountCondition = discountCondition;
+        this.originalprice = originalprice;
+        this.discountConditions = discountConditions;
     }
 
     HashMap<Customer, Integer> discountedHashMap = new HashMap<>();
@@ -34,11 +32,15 @@ public class MartService {
         printDiscountedPrice();
     }
 
+    // discountConditions 이거가지고 수정
+
     private void DiscountAllCustomers() {
         for(Customer customer : customers){
-            if(customer instanceof Student) discountedHashMap.put(customer, discountCondition.applyDiscountPolicy(price));
-            else if(customer instanceof Employee) discountedHashMap.put(customer, discountCondition.applyDiscountPolicy(price));
-            else discountedHashMap.put(customer, price);
+            if(customer instanceof Student) {
+                discountedHashMap.put(customer, discountConditions[0].applyDiscountPolicy(originalprice));
+            }
+            else if(customer instanceof Employee) discountedHashMap.put(customer, discountConditions[1].applyDiscountPolicy(originalprice));
+            else discountedHashMap.put(customer, originalprice);
         }
     }
 
