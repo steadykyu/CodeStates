@@ -1,8 +1,6 @@
 package app.MartService.customer;
 
-import app.PhoneInfo;
-
-public class Customer implements Comparable<Customer>{
+public class Customer {
     private int id;
     private String name;
     // 핸드폰 가격은 백만원이다.
@@ -28,8 +26,4 @@ public class Customer implements Comparable<Customer>{
         this.name = name;
     }
 
-    @Override
-    public int compareTo(Customer c) {
-        return name.compareTo(c.getName());
-    }
 }

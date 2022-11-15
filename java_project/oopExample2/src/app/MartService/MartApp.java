@@ -2,12 +2,11 @@ package app.MartService;
 
 import app.MartService.customer.Customer;
 import app.MartService.customer.CustomerRepository;
-import app.MartService.customer.Employee;
-import app.MartService.customer.Student;
-import app.MartService.discount.*;
+import app.MartService.discount.AmountPolicy;
+import app.MartService.discount.EmployeeDiscountCondition;
+import app.MartService.discount.RatePolicy;
+import app.MartService.discount.StudentDiscountCondition;
 import app.PhoneInfo;
-
-import java.util.HashMap;
 
 
 public class MartApp {
@@ -17,12 +16,8 @@ public class MartApp {
         CustomerRepository customerRepository = new CustomerRepository();
         Customer[] customers = customerRepository.findAll();
         int originalPrice = new PhoneInfo(1000000, "iphone").getPrice();
-        Discount discount = new Discount(new HashMap<String, DiscountCondition>(){{
-            put("학생",new StudentDiscountCondition(new RatePolicy(10)));
-            put("직원",new EmployeeDiscountCondition(new AmountPolicy(10000)));
-        }});
 
-        MartService martService = new MartService(customers, originalPrice,discount);
+        MartService martService = new MartService(customers, originalPrice);
 
         // 할인 로직 시작
         martService.service();
