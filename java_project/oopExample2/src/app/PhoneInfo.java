@@ -10,16 +10,10 @@ public class PhoneInfo {
         this.kind = kind;
     }
 
-    public String getKind() {
-        return kind;
-    }
 
     public int getPrice() {
         return price;
     }
 
-    public int getDiscountPrice(int discountRate){
-        return getPrice() - getPrice() * discountRate / 100;
-    }
 
 }

@@ -20,6 +20,7 @@ public class MartApp {
         Discount discount = new Discount(new HashMap<String, DiscountCondition>(){{
             put("학생",new StudentDiscountCondition(new RatePolicy(10)));
             put("직원",new EmployeeDiscountCondition(new AmountPolicy(10000)));
+            //put("유아", new EmployeeDiscountCondition(new RatePolicy(30)));
         }});
 
         MartService martService = new MartService(customers, originalPrice,discount);

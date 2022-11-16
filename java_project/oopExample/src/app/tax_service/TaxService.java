@@ -16,9 +16,9 @@ public class TaxService {
         System.out.println("지금부터는 세금 서비스 로직입니다.");
 
         Customer[] customers = new Customer[]{
-                new Customer(1, "김무개"),
-                new Student(2, "최학생", "한국고등학교"),
-                new Employee(3, "이직원", "코리아마트")
+                new Customer(1, "김무개","일반"),
+                new Student(2, "최학생", "학생","한국고등학교"),
+                new Employee(3, "이직원", "직원","코리아마트")
         };
 
         PhoneInfo phoneInfo = new PhoneInfo(1000000, "Iphone");

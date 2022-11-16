@@ -34,16 +34,11 @@ public class MartService {
 
     private void DiscountAllCustomers() {
         for(Customer customer : customers){
-            if(customer instanceof Student) {
-                String customerType = "학생";
+            if(customer.getCustomerType() == "일반") discountedHashMap.put(customer, originalPrice);
+            else{
+                String customerType = customer.getCustomerType();
                 discountedHashMap.put(customer, discount.discount(customerType,originalPrice)); // 캡슐화 적용
-
             }
-            else if(customer instanceof Employee){
-                String customerType = "직원";
-                discountedHashMap.put(customer, discount.discount(customerType,originalPrice));
-            }
-            else discountedHashMap.put(customer, originalPrice);
         }
     }
 

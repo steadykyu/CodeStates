@@ -1,6 +1,6 @@
 package app.MartService.discount;
 
-public class AmountPolicy {
+public class AmountPolicy implements DiscountPolicy{
     private int discountAmount;
 
     public AmountPolicy(int discountAmount) {

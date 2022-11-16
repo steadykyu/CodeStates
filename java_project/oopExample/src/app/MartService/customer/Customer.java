@@ -5,11 +5,16 @@ import app.PhoneInfo;
 public class Customer implements Comparable<Customer>{
     private int id;
     private String name;
-    // 핸드폰 가격은 백만원이다.
+    private String customerType;
 
-    public Customer(int id, String name) {
+    public Customer(int id, String name, String customerType) {
         this.id = id;
         this.name = name;
+        this.customerType = customerType;
+    }
+
+    public String getCustomerType() {
+        return customerType;
     }
 
     public int getId() {
