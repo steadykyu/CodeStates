@@ -8,7 +8,10 @@ import app.PhoneInfo;
 import java.util.HashMap;
 
 public class AppConfig {
-
+//    private CustomerRepository customerRepository = new CustomerRepository();
+//    public CustomerRepository customerRepository(){
+//        return customerRepository;
+//    }
     public CustomerRepository customerRepository(){
         return new CustomerRepository();
     }
