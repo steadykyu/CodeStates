@@ -23,7 +23,7 @@ public class AppConfig {
             put("직원",new EmployeeDiscountCondition(new AmountPolicy(10000)));
         }});
     }
-    // 싱글톤 패턴 적용 못하남..
+
     public RemovedRepository removedRepository(){
         return new RemovedRepository(customerRepository());
     }

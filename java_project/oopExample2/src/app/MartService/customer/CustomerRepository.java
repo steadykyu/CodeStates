@@ -13,10 +13,14 @@ public class CustomerRepository {
         return customers;
     }
 
-    public void removeCustomer(int id){
-       Customer[] newcustomers = new Customer[customers.length-1];
-       System.arraycopy(customers,0,newcustomers,0,id-1);
-       System.arraycopy(customers,id,newcustomers,id-1,customers.length - id);
-       customers = newcustomers;
+    public Customer[] removeCustomer(int id){
+        System.out.println("-".repeat(50));
+        System.out.println(id + "번 id를 가진 고객을 지웠습니다.");
+        System.out.println("-".repeat(50));
+
+        Customer[] newcustomers = new Customer[customers.length-1];
+        System.arraycopy(customers,0,newcustomers,0,id-1);
+        System.arraycopy(customers,id,newcustomers,id-1,customers.length - id);
+        return customers = newcustomers;
     }
 }
