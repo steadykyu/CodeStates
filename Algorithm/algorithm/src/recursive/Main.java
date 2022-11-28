@@ -1,3 +1,5 @@
+package recursive;
+
 import java.util.Arrays;
 
 public class Main {
@@ -166,7 +168,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        Main main = new Main();
+//        recursive.Main main = new recursive.Main();
 //        int output = main.sumTo(10);
 //        System.out.println(output);
     }

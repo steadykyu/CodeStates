@@ -1,3 +1,4 @@
+package recursive;
 
 public class ArrayElementSum {
     // arrsum : [int] -> int

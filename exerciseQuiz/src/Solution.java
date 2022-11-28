@@ -1,36 +1,37 @@
 import java.util.*;
 
 public class Solution {
-    public String letterCapitalize(String str) {
-        // TODO:
-        String res ="";
-        if(str.length()==0) return "";
-        // split이 어떻게 쪼개주는가?
-        String[] strArr = str.split(" ");
-
-        for(String eachStr : strArr){
-            // 맨 앞글자를 대문자로 바꾸어주어야한다.
-            String tmp = "";
-            System.out.println("문자열은 = " + eachStr);
-            char[] chArr = eachStr.toCharArray();
-            for(int i=0; i < chArr.length; i++){
-                if(i==0){
-                    tmp += Character.toUpperCase(chArr[i]);
-                }else tmp += chArr[i];
-            }
-            res = res + tmp + " ";
+    public String readVertically(String[] arr) {
+        String res = "";
+        int len = 0;
+        // 가장 긴 문자열의 길이 찾기
+        for(String s : arr){
+            len = Math.max(s.length(),len);
         }
-        return res.substring(0,res.length()-1);
+
+        // 문자열 배열 동시 탐색
+        for(int i = 0; i < len ; i++){ // 가장 긴 문자열 만큼 순회
+            for(int j=0; j < arr.length; j++) // arr 요소 순회
+                // if i > 요소 인덱스 최대값 -> 아무일도 X
+                if(i > arr[j].length()-1) continue;
+
+            res += arr[j].charAt(i);
+        }
+        return res;
     }
 
 
     public static void main(String[] args) {
         Solution sol = new Solution();
-//        System.out.println(sol.letterCapitalize("    "));
-        String[] blankArr = new String("a    b").split(" ");
 
-        for (String b : blankArr){
-            System.out.println(b);
-        }
+        Queue<Integer> queue = new LinkedList<>();
+
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+
+        System.out.println(queue.remove());
+        System.out.println(queue.size());
+
     }
 }
