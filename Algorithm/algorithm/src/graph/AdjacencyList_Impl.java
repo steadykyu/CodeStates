@@ -2,10 +2,10 @@ package graph;
 
 import java.util.*;
 
-public class AdjacencyList {
+public class AdjacencyList_Impl {
     private ArrayList<ArrayList<Integer>> graph;
 
-    public AdjacencyList() {
+    public AdjacencyList_Impl() {
         graph = new ArrayList<>();
     }
 
@@ -58,7 +58,7 @@ public class AdjacencyList {
 
     //main 함수
     public static void main(String[] args) {
-        AdjacencyList adjList = new AdjacencyList();
+        AdjacencyList_Impl adjList = new AdjacencyList_Impl();
         adjList.setGraph(3);
 
         adjList.addEdge(0, 1);

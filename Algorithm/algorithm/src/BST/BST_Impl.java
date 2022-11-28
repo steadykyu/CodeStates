@@ -3,7 +3,7 @@ package BST;
 import java.util.*;
 // Binary Search Tree와 비슷한 객체를 구현해보자.
 // Solution의 이너클래스로 Node 클래스와 binaraySearchTree 클래스가 있다.
-class BST {
+class BST_Impl {
     // 트리를 구성하는 노드 클래스입니다.
     public static class Node {
         private int data;
@@ -142,8 +142,8 @@ class BST {
     // 메인함수
     public static void main(String[] args) {
         // static 클래스인 binarySearchTree
-        BST.binarySearchTree test = new BST.binarySearchTree();
-        test.root = new BST.Node(10); // BST 클래스의 root 값을 설정
+        BST_Impl.binarySearchTree test = new BST_Impl.binarySearchTree();
+        test.root = new BST_Impl.Node(10); // BST 클래스의 root 값을 설정
         test.insert(7);
         test.insert(8);
         test.insert(6);
@@ -177,8 +177,8 @@ class BST {
         System.out.println("값을 다르게 삽입해보기");
         // 만약 다르게 insert 하면 어떻게 될까?
         // 결국 입력 값들의 순서에 따라 모양이 달라진다.
-        BST.binarySearchTree test2 = new BST.binarySearchTree();
-        test.root = new BST.Node(10);
+        BST_Impl.binarySearchTree test2 = new BST_Impl.binarySearchTree();
+        test.root = new BST_Impl.Node(10);
         test.insert(9);
         test.insert(7);
         test.insert(8);

@@ -2,7 +2,7 @@ package graph;
 
 import java.util.Arrays;
 
-public class AdjacencyMatrix {
+public class AdjacencyMatrix_Impl {
     private int[][] graph;
 
     public void setGraph(int size) {
@@ -24,7 +24,7 @@ public class AdjacencyMatrix {
 
     public boolean hasEdge(int from, int to) {
         if(from >= graph.length || to >= graph.length) return false; // 정점 위치가 이상한 경우
-        else if(graph[from][to] == 1) return true;    // 1 이므로, 인접 행렬에 간선이 존재
+        else if(graph[from][to] == 1) return true;    // 1 이므로, 인접 행렬에 간선이 존재하는 경우
         else return false;
     }
 
@@ -36,7 +36,7 @@ public class AdjacencyMatrix {
 
     // 메인함수
     public static void main(String[] args) {
-        AdjacencyMatrix adjMatrix = new AdjacencyMatrix();
+        AdjacencyMatrix_Impl adjMatrix = new AdjacencyMatrix_Impl();
         adjMatrix.setGraph(3);
         System.out.println(Arrays.deepToString(adjMatrix.getGraph()));
 /*
