@@ -1,3 +1,0 @@
-git add .
-git commit -m "stringify 퀴즈 내풀이"
-git push
